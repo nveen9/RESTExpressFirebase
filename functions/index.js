@@ -29,7 +29,7 @@ app.get('/getUser', async (req, res) => {
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
-            res.status(200).json({ message: "User Details", "Document data: ": docSnap.data() });
+            res.status(200).json({ message: "User Details", docData: docSnap.data() });
         } else {
             res.status(500).json({ message: "No such data!" });
         }
